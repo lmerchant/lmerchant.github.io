@@ -3,32 +3,253 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>lmerchant GitHub pages</title>
+        <title>Project pages · lmerchant</title>
+        <meta
+            name="description"
+            content="Data projects on precipitation datasets and ocean data, published on GitHub Pages."
+        />
+        <meta name="color-scheme" content="light dark" />
+        <style>
+            :root {
+                --bg: #fbfbfa;
+                --surface: #ffffff;
+                --text: #1c1f23;
+                --muted: #545b64;
+                --border: #dcdfe3;
+                --link: #0b5cad;
+                --link-hover: #083f77;
+                --focus: #0b5cad;
+            }
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --bg: #15171a;
+                    --surface: #1d2024;
+                    --text: #e7e8e6;
+                    --muted: #a8aeb6;
+                    --border: #33383e;
+                    --link: #7cb7ff;
+                    --link-hover: #b3d4ff;
+                    --focus: #7cb7ff;
+                }
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--text);
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    "Segoe UI",
+                    Roboto,
+                    sans-serif;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            .page {
+                max-width: 46rem;
+                margin: 0 auto;
+                padding: 3rem 1.25rem 4rem;
+            }
+
+            header {
+                margin-bottom: 2.5rem;
+            }
+            h1 {
+                margin: 0 0 0.5rem;
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            .intro {
+                margin: 0;
+                color: var(--muted);
+                max-width: 38rem;
+            }
+
+            section + section {
+                margin-top: 2.5rem;
+            }
+            h2 {
+                margin: 0 0 0.75rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid var(--border);
+                font-size: 0.875rem;
+                font-weight: 600;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                color: var(--muted);
+            }
+
+            .projects {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: grid;
+                gap: 0.75rem;
+            }
+            .project {
+                padding: 1rem 1.25rem;
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 0.5rem;
+            }
+            h3 {
+                margin: 0 0 0.25rem;
+                font-size: 1.125rem;
+                line-height: 1.35;
+            }
+            .project p {
+                margin: 0;
+                color: var(--muted);
+            }
+            .source {
+                display: inline-block;
+                margin-top: 0.5rem;
+                font-size: 0.875rem;
+            }
+
+            a {
+                color: var(--link);
+                text-underline-offset: 0.15em;
+            }
+            a:hover {
+                color: var(--link-hover);
+            }
+            a:focus-visible {
+                outline: 2px solid var(--focus);
+                outline-offset: 2px;
+                border-radius: 0.125rem;
+            }
+            h3 a {
+                text-decoration: none;
+            }
+            h3 a:hover,
+            h3 a:focus-visible {
+                text-decoration: underline;
+            }
+
+            .visually-hidden {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                margin: -1px;
+                padding: 0;
+                overflow: hidden;
+                clip: rect(0 0 0 0);
+                white-space: nowrap;
+                border: 0;
+            }
+
+            footer {
+                margin-top: 3rem;
+                font-size: 0.875rem;
+                color: var(--muted);
+            }
+        </style>
     </head>
     <body>
-        <h1>Project pages</h1>
+        <div class="page">
+            <header>
+                <h1>Project pages</h1>
+                <p class="intro">
+                    Data projects published on GitHub Pages: tools for finding and assessing
+                    precipitation datasets, and a map of ocean data.
+                </p>
+            </header>
 
-        <ul>
-            <li>
-                <a href="https://lmerchant.github.io/colocation_map"
-                    >Colocation map of CCHDO and BCO-DMO</a
-                >
-            </li>
-            <li>
-                <a href="https://lmerchant.github.io/Rstar_precipitation-relationships/"
-                    >R* Scores for precipitation datasets</a
-                >
-            </li>
-            <li>
-                <a href="https://lmerchant.github.io/precip_workshop_dashboard/"
-                    >Precipitation Workshop Dashboard</a
-                >
-            </li>
-            <li>
-                <a href="https://lmerchant.github.io/precipitation_dashboard/"
-                    >US precipitation data sources dashboard</a
-                >
-            </li>
-        </ul>
+            <main>
+                <section aria-labelledby="precip-heading">
+                    <h2 id="precip-heading">Precipitation data</h2>
+                    <ul class="projects">
+                        <li class="project">
+                            <h3>
+                                <a href="https://lmerchant.github.io/Rstar_precipitation-relationships/"
+                                    >R* Scores for precipitation datasets</a
+                                >
+                            </h3>
+                            <p>
+                                How likely each dataset is to stop being available, scored from web
+                                research. Read the evidence for each part of the score and choose your
+                                own scores.
+                            </p>
+                            <a
+                                class="source"
+                                href="https://github.com/lmerchant/Rstar_precipitation-relationships"
+                                >Source on GitHub<span class="visually-hidden"> for R* Scores</span></a
+                            >
+                        </li>
+                        <li class="project">
+                            <h3>
+                                <a href="https://lmerchant.github.io/precip_workshop_dashboard/"
+                                    >Precipitation Workshop Dashboard</a
+                                >
+                            </h3>
+                            <p>
+                                Gauge, satellite, reanalysis and merged precipitation products, with their
+                                archives, coverage, resolution and record status. Search and filter by
+                                data source and coverage.
+                            </p>
+                            <a
+                                class="source"
+                                href="https://github.com/lmerchant/precip_workshop_dashboard"
+                                >Source on GitHub<span class="visually-hidden">
+                                    for the Precipitation Workshop Dashboard</span
+                                ></a
+                            >
+                        </li>
+                        <li class="project">
+                            <h3>
+                                <a href="https://lmerchant.github.io/precipitation_dashboard/"
+                                    >US precipitation data sources dashboard</a
+                                >
+                            </h3>
+                            <p>
+                                US data centers, systems and research projects that hold precipitation
+                                data, from NASA, NOAA, NSF, NWS and others, with their holdings and data
+                                endpoints. Filter by agency and topic.
+                            </p>
+                            <a
+                                class="source"
+                                href="https://github.com/lmerchant/precipitation_dashboard"
+                                >Source on GitHub<span class="visually-hidden">
+                                    for the US precipitation data sources dashboard</span
+                                ></a
+                            >
+                        </li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="ocean-heading">
+                    <h2 id="ocean-heading">Ocean data</h2>
+                    <ul class="projects">
+                        <li class="project">
+                            <h3>
+                                <a href="https://lmerchant.github.io/colocation_map/"
+                                    >Colocation map of CCHDO and BCO-DMO</a
+                                >
+                            </h3>
+                            <p>
+                                A map of where CCHDO bottle and CTD data and BCO-DMO CTD data were
+                                collected, to see where the two archives' data overlap.
+                            </p>
+                            <a class="source" href="https://github.com/lmerchant/colocation_map"
+                                >Source on GitHub<span class="visually-hidden">
+                                    for the colocation map</span
+                                ></a
+                            >
+                        </li>
+                    </ul>
+                </section>
+            </main>
+
+            <footer>
+                <p>
+                    <a href="https://github.com/lmerchant">lmerchant on GitHub</a>
+                </p>
+            </footer>
+        </div>
     </body>
 </html>
